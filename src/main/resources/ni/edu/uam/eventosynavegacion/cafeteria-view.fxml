@@ -5,23 +5,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="501.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="501.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="lblTituloC" text="RECEPCION CAFE:">
          <font>
             <Font size="30.0" />
          </font></Label>
       <Label fx:id="lblCode" text="Codigo del lote:" />
-      <TextField fx:id="txtLCode" />
+      <TextField fx:id="txtCode" />
       <Label fx:id="lblProductor" text="Productor:" />
       <TextField fx:id="txtProductor" />
       <Label fx:id="lblWeight" text="Peso(Kg):" />
       <TextField fx:id="txtWeight" />
       <Label fx:id="lblEntrega" text="Fecha de entrega:" />
       <TextField fx:id="txtEntrega" />
-      <Button fx:id="btnRegistrar" mnemonicParsing="false" text="Registrar Lotes" />
+      <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarLote" text="Registrar Lotes" />
       <Label fx:id="lblLotesRegistrados" text="Lotes Registrados:" />
-      <TableView fx:id="tvRegistros" prefHeight="292.0" prefWidth="406.0">
+      <TableView fx:id="tvRegistros" prefHeight="140.0" prefWidth="481.0">
         <columns>
           <TableColumn fx:id="colCode" prefWidth="120.0" text="Codigo" />
           <TableColumn fx:id="colProductor" prefWidth="120.0" text="Productor" />
@@ -30,6 +30,7 @@
 
         </columns>
       </TableView>
+      <TextArea fx:id="txtDetalles" editable="false" prefHeight="200.0" prefWidth="200.0" promptText="Detalles del lote seleccionado" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

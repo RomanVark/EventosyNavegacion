@@ -11,18 +11,20 @@
          <font>
             <Font size="30.0" />
          </font></Label>
-      <Label text="Codigo:" />
-      <TextField fx:id="txtCode" />
-      <Label text="Nombre:" />
-      <TextField fx:id="txtName" />
-      <Label text="Precio:" />
-      <TextField fx:id="txtPrice" />
-      <Label text="Cantidad" />
-      <TextField fx:id="txtCant" />
+      <Label fx:id="lblCodigo" text="Codigo:" />
+      <TextField fx:id="txtCodigo" />
+      <Label fx:id="lblNobre" text="Nombre:" />
+      <TextField fx:id="txtNombre" />
+      <Label fx:id="lblPrecio" text="Precio:" />
+      <TextField fx:id="txtPrecio" />
+      <Label fx:id="lblCantidad" text="Cantidad" />
+      <TextField fx:id="txtCantidad" />
       <Button mnemonicParsing="false" text="Guardar" />
-      <Label text="Buscar producto:" />
-      <TextField fx:id="txtSearch" />
-      <Label fx:id="lblResultado" text="Resultado:" />
+      <Label fx:id="lblBuscar" text="Buscar producto:" />
+      <TextField fx:id="txtBuscar" />
+      <Button fx:id="btnBuscar" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Buscar" />
+      <Label fx:id="lblBusquedaResultado" text="Resultado:" />
+      <Label fx:id="txtResultado" />
    </children>
    <padding>
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

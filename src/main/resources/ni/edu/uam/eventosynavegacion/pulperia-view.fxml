@@ -19,7 +19,7 @@
       <TextField fx:id="txtPrecio" />
       <Label fx:id="lblCantidad" text="Cantidad" />
       <TextField fx:id="txtCantidad" />
-      <Button mnemonicParsing="false" text="Guardar" />
+      <Button fx:id="btnGuardar" mnemonicParsing="false" text="Guardar" />
       <Label fx:id="lblBuscar" text="Buscar producto:" />
       <TextField fx:id="txtBuscar" />
       <Button fx:id="btnBuscar" mnemonicParsing="false" prefHeight="25.0" prefWidth="59.0" text="Buscar" />

@@ -5,22 +5,23 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="501.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="598.0" prefWidth="501.0" spacing="5.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ni.edu.uam.eventosynavegacion.controllers.LoteController">
    <children>
       <Label fx:id="lblTituloC" text="RECEPCION CAFE:">
          <font>
             <Font size="30.0" />
          </font></Label>
       <Label fx:id="lblCode" text="Codigo del lote:" />
-      <TextField fx:id="txtCode" />
+      <TextField fx:id="txtCode" promptText="001" />
       <Label fx:id="lblProductor" text="Productor:" />
-      <TextField fx:id="txtProductor" />
+      <TextField fx:id="txtProductor" promptText="Juan Gomez" />
       <Label fx:id="lblWeight" text="Peso(Kg):" />
-      <TextField fx:id="txtWeight" />
+      <TextField fx:id="txtWeight" promptText="125.5" />
       <Label fx:id="lblEntrega" text="Fecha de entrega:" />
-      <TextField fx:id="txtEntrega" />
+      <DatePicker fx:id="dpEntrega" />
       <Button fx:id="btnRegistrar" mnemonicParsing="false" onAction="#registrarLote" text="Registrar Lotes" />
       <Label fx:id="lblLotesRegistrados" text="Lotes Registrados:" />
+      <Label text="Seleccione un lote y presione clic derecho para editarlo o eliminarlo." />
       <TableView fx:id="tvRegistros" prefHeight="140.0" prefWidth="481.0">
         <columns>
           <TableColumn fx:id="colCode" prefWidth="120.0" text="Codigo" />

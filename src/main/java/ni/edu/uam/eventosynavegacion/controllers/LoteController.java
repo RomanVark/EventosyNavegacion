@@ -26,7 +26,7 @@ public class LoteController {
     private TableView<Lote> tvRegistros;
 
     @FXML
-    private TableColumn<Lote, String> colCodigo;
+    private TableColumn<Lote, String> colCode;
 
     @FXML
     private TableColumn<Lote, String> colProductor;
@@ -45,7 +45,7 @@ public class LoteController {
 
     @FXML
     public void initialize() {
-        colCodigo.setCellValueFactory(
+        colCode.setCellValueFactory(
                 new PropertyValueFactory<>("codigo")
         );
 

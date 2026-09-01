@@ -1,6 +1,7 @@
 module ni.edu.uam.eventosynavegacion {
     requires javafx.controls;
     requires javafx.fxml;
+    requires jdk.compiler;
 
 
     opens ni.edu.uam.eventosynavegacion to javafx.fxml;

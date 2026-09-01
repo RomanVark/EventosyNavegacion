@@ -7,6 +7,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import ni.edu.uam.eventosynavegacion.modelos.Lote;
 import java.util.Optional;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 
 
@@ -19,7 +21,7 @@ public class LoteController {
     @FXML
     private TextField txtWeight;
     @FXML
-    private TextField txtEntrega;
+    private DatePicker dpEntrega;
     @FXML
     private Button btnRegistrar;
     @FXML
@@ -32,10 +34,10 @@ public class LoteController {
     private TableColumn<Lote, String> colProductor;
 
     @FXML
-    private TableColumn<Lote, Double> colPeso;
+    private TableColumn<Lote, Double> colWeight;
 
     @FXML
-    private TableColumn<Lote, String> colFecha;
+    private TableColumn<Lote, LocalDate> colFecha;
 
     @FXML
     private TextArea txtDetalles;
@@ -53,7 +55,7 @@ public class LoteController {
                 new PropertyValueFactory<>("productor")
         );
 
-        colPeso.setCellValueFactory(
+        colWeight.setCellValueFactory(
                 new PropertyValueFactory<>("peso")
         );
 
@@ -87,7 +89,7 @@ public class LoteController {
         @FXML
                 protected void registrarLote(ActionEvent event){
             if (txtCode.getText().isBlank() ||txtProductor.getText().isBlank() || txtWeight.getText().isBlank() ||
-        txtEntrega.getText().isBlank()) {
+        dpEntrega.getValue()==null) {
                 mostrarAlerta(Alert.AlertType.WARNING, "Campos incompletos", "Debe completar todos los campos");
                 return;
         }
@@ -104,7 +106,7 @@ public class LoteController {
                 Lote lote = new Lote(txtCode.getText(),
                         txtProductor.getText(),
                         weight,
-                        txtEntrega.getText());
+                        dpEntrega.getValue());
 
                 tvRegistros.getItems().add(lote);
             } else {
@@ -112,7 +114,7 @@ public class LoteController {
                 loteEditando.setCodigo(txtCode.getText());
                 loteEditando.setProductor(txtProductor.getText());
                 loteEditando.setPeso(weight);
-                loteEditando.setFecha(txtEntrega.getText());
+                loteEditando.setFecha(dpEntrega.getValue());
 
                 tvRegistros.refresh();
 
@@ -128,10 +130,12 @@ public class LoteController {
 
         private void mostrarDetalles(MouseEvent event) {
             Lote loteSeleccionado = tvRegistros.getSelectionModel().getSelectedItem();
+            DateTimeFormatter formato =
+                    DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
             if(loteSeleccionado != null) {
                 txtDetalles.setText("Codigo: " + loteSeleccionado.getCodigo() + "\nProductor: " + loteSeleccionado.getProductor()
-                + "\nPeso: " + loteSeleccionado.getPeso() + " Kg" + "\nFecha de entrega: " + loteSeleccionado.getFecha());
+                + "\nPeso: " + loteSeleccionado.getPeso() + " Kg" + "\nFecha de entrega: " + loteSeleccionado.getFecha().format(formato));
             }
 
         }
@@ -152,7 +156,7 @@ public class LoteController {
         txtCode.setText(loteSeleccionado.getCodigo());
         txtProductor.setText(loteSeleccionado.getProductor());
         txtWeight.setText(String.valueOf(loteSeleccionado.getPeso()));
-        txtEntrega.setText(loteSeleccionado.getFecha());
+        dpEntrega.setValue(loteSeleccionado.getFecha());
 
         btnRegistrar.setText("Guardar Cambios");
 
@@ -189,7 +193,7 @@ public class LoteController {
         txtCode.clear();
         txtProductor.clear();
         txtWeight.clear();
-        txtEntrega.clear();
+        dpEntrega.setValue(null);
     }
 
     private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {

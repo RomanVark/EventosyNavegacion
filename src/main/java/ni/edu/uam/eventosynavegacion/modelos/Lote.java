@@ -1,13 +1,15 @@
 package ni.edu.uam.eventosynavegacion.modelos;
 
+import java.time.LocalDate;
+
 public class Lote {
     private String codigo;
     private String productor;
     private double peso;
-    private String fecha;
+    private LocalDate fecha;
 
 
-    public Lote(String codigo, String productor, double peso, String fecha) {
+    public Lote(String codigo, String productor, double peso, LocalDate fecha) {
         this.codigo = codigo;
         this.productor = productor;
         this.peso = peso;
@@ -38,11 +40,11 @@ public class Lote {
         this.peso = peso;
     }
 
-    public String getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(String fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 }

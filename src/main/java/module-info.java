@@ -4,5 +4,7 @@ module ni.edu.uam.eventosynavegacion {
 
 
     opens ni.edu.uam.eventosynavegacion to javafx.fxml;
+    opens ni.edu.uam.eventosynavegacion.controllers to javafx.fxml;
+    opens ni.edu.uam.eventosynavegacion.modelos to javafx.base;
     exports ni.edu.uam.eventosynavegacion;
 }

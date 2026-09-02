@@ -7,6 +7,13 @@ public class Artesania {
     private double precio;
     private String rutaImagen;
 
+    public Artesania( String nombre, String categoria, double precio, String rutaImagen) {
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.precio = precio;
+        this.rutaImagen = rutaImagen;
+    }
+
 }
 
 public String getNombre() {
@@ -23,6 +30,10 @@ public String getCategoria() {
 
 public void setCategoria(String categoria) {
     this.categoria = categoria;
+}
+
+public double getPrecio() {
+    return precio;
 }
 
 public void setPrecio(double precio) {

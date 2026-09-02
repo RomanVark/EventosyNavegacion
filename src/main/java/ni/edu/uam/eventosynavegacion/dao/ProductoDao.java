@@ -10,11 +10,9 @@ public class ProductoDao implements Crud<Producto> {
 
     private final List<Producto> productos = new ArrayList<>();
 
-
     @Override
     public void agregar(Producto producto) {
         productos.add(producto);
-
     }
 
     @Override
@@ -31,13 +29,13 @@ public class ProductoDao implements Crud<Producto> {
     public List<Producto> ObtenerRegistros() {
         return productos;
     }
+
     public Producto buscarporcodigo(String codigo) {
         for (Producto producto : productos) {
-            if ( producto.getCodigo().equals(codigo)) {
+            if (producto.getCodigo().equals(codigo)) {
                 return producto;
             }
         }
         return null;
     }
 }
-

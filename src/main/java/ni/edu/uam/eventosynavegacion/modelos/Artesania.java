@@ -14,38 +14,35 @@ public class Artesania {
         this.rutaImagen = rutaImagen;
     }
 
-}
+    public String getNombre() {
+        return nombre;
+    }
 
-public String getNombre() {
-    return nombre;
-}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-public void setNombre(String nombre) {
-    this.nombre = nombre;
-}
+    public String getCategoria() {
+        return categoria;
+    }
 
-public String getCategoria() {
-    return categoria;
-}
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
 
-public void setCategoria(String categoria) {
-    this.categoria = categoria;
-}
+    public double getPrecio() {
+        return precio;
+    }
 
-public double getPrecio() {
-    return precio;
-}
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
 
-public void setPrecio(double precio) {
-    this.precio = precio;
-}
+    public String getRutaImagen() {
+        return rutaImagen;
+    }
 
-
-
-public String getRutaImagen() {
-    return rutaImagen;
-}
-
-public void setRutaImagen(String rutaImagen) {
-    this.rutaImagen = rutaImagen;
+    public void setRutaImagen(String rutaImagen) {
+        this.rutaImagen = rutaImagen;
+    }
 }

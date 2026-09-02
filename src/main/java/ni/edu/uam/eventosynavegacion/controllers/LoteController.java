@@ -1,6 +1,5 @@
 package ni.edu.uam.eventosynavegacion.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -87,7 +86,7 @@ public class LoteController {
     }
 
         @FXML
-                protected void registrarLote(ActionEvent event){
+                protected void registrarLote(){
             if (txtCode.getText().isBlank() ||txtProductor.getText().isBlank() || txtWeight.getText().isBlank() ||
         dpEntrega.getValue()==null) {
                 mostrarAlerta(Alert.AlertType.WARNING, "Campos incompletos", "Debe completar todos los campos");

@@ -1,6 +1,5 @@
 package ni.edu.uam.eventosynavegacion.controllers;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
@@ -33,7 +32,7 @@ public class PulperiaController {
     private final ProductoDao productoDao = new ProductoDao();
 
     @FXML
-    private void guardarProducto(ActionEvent event) {
+    private void guardarProducto() {
 
         if (txtCodigo.getText().isBlank()
                 || txtNombre.getText().isBlank()
@@ -132,7 +131,7 @@ public class PulperiaController {
             return;
         }
 
-        Producto producto = productoDao.buscarporcodigo(codigo);
+        Producto producto = productoDao.Buscar(codigo);
 
         if (producto == null) {
 
@@ -152,7 +151,7 @@ public class PulperiaController {
     }
 
     @FXML
-    private void buscarProductoBoton(ActionEvent event) {
+    private void buscarProductoBoton() {
 
         String codigo = txtBuscar.getText().trim();
 
